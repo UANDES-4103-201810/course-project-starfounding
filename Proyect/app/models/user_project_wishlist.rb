@@ -1,0 +1,2 @@
+class UserProjectWishlist < ApplicationRecord
+end

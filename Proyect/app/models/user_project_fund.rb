@@ -1,0 +1,2 @@
+class UserProjectFund < ApplicationRecord
+end
