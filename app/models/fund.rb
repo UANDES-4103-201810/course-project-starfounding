@@ -4,6 +4,9 @@ class Fund < ApplicationRecord
   has_one :fund_promise
   has_many :product
   has_one :user
+
+  validates :product, presence: true
+  validates :user, presence: true
   validates :amountFunded,
             numericality: true,
             presence: true

@@ -7,6 +7,8 @@ class Product < ApplicationRecord
   has_many :wish_list
   has_many :fund
 
+  validates :category, presence: true
+  validates :user, presence: true
   validates :title,
             numericality: false,
             presence: true
@@ -22,7 +24,7 @@ class Product < ApplicationRecord
   validates :rating,
             presence:true,
             allow_blank: true
-  validates :product_creation_is_not_in_the_past
+  validate :product_creation_is_not_in_the_past
 
   def product_creation_is_not_in_the_past
     if finishDate.present? && finishDate < Date.today
