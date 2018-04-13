@@ -1,9 +1,4 @@
 class CreateUsers < ActiveRecord::Migration[5.1]
-
-has_many :BankData
-has_many :Project
-has_many :UserProjectFund
-
   def change
     create_table :users do |t|
       t.string :email

@@ -1,10 +1,4 @@
 class CreateProjects < ActiveRecord::Migration[5.1]
-
-belongs_to :UserProjectWishlist
-belongs_to :User
-belongs_to :Category
-has_many :Promise
-
   def change
     create_table :projects do |t|
       t.integer :category
