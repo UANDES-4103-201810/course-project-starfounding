@@ -3,18 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <title>StarFounding</title>
+    <style type="text/css">
+        *{
+            padding:0px;
+            margin:0px;
+        }
+
+        #header{
+            margin:auto;
+            width: 2000px;
+            font-family: Arial, Helvetica, sans-serif;
+            float:left;
+        }
+
+        ul, ol{
+            list-style:none;
+        }
+
+        .nav li a{
+            background-color: steelblue;
+            color: white;
+            text-decoration: none;
+            padding:50px 30px;
+            display:block;
+        }
+
+        .nav li a:hover{
+            background-color: #434343;
+        }
+
+        .nav > li{
+            float:left;
+        }
+
+        .nav li ul{
+            display:none;
+            position:absolute;
+            min-width: 140px;
+        }
+
+        .nav li:hover > ul{
+            display:block;
+        }
+
+        .nav li ul li{
+            position:relative;
+        }
+
+        .nav li ul li ul{
+            right:-140px;
+            top:0px;
+        }
+
+        #open_close{
+            cursor:pointer;
+            width: 50px;
+            background: dodgerblue;
+            padding: 10px;
+            border-bottom: 2px solid #ffffff;
+            float:left;
+
+        }
+        #register{
+            cursor:pointer;
+            width: 50px;
+            background: dodgerblue;
+            padding: 10px;
+            border-bottom: 2px solid #ffffff;
+            float: left;
+        }
+        #login{
+            width: 200px;
+            height: 140px;
+            background: #000000;
+            border-radius: 2px;
+            padding: 10px;
+            color:white;
+            display:none;
+        }
+        #send{
+            border:none;
+            border-radius: 5px;
+            margin: 50px 120px;
+            width: 60px;
+        }
+
+
+
+
+    </style>
 </head>
-<body>
+<body style="background: dodgerblue">
 
-    <h1>StarFounding</h1>
+    <h1 style="font-size: 40px">StarFounding</h1>
+    <div id="open_close">Login</div>
+    <form id="login">
+        <label>Email or Username:</label>
+        <input type="text" id="user"/>
+        <label>Password:</label>
+        <input type="text" id="pass"/>
+        <input type="submit" value="Send" id="send"/>
+    </form>
+    <div id="register">Register</div>
 
-    <h2>Team members:</h2>
-    <p>Joaquin Fernandez</p>
-    <p>Vicente Lucero</p>
-    <a href="/products"> Go to Products</a>
+    <div id="header">
+
+        <ul class="nav">
+            <li><a style="font-size: 30px" href="">HOME</a></li>
+
+            <li><a style="font-size: 30px" href="">CATEGORIES</a></li>
+            <li><a style="font-size: 30px" href="">POPULARS</a>
+                <ul>
+                    <li><a href="/products">MOST VISITED</a></li>
+                    <li><a href="/products">MOST FUNDED</a></li>
+                </ul>
+            </li>
+            <li style="width: 500px; font-size: 30px"><a href="">SEARCH</a></li>
+
+        </ul>
+
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
