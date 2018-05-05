@@ -1,9 +1,5 @@
 # README
 
-*Team Members*
-* Vicente Lucero
-* Joaquin Fernandez
-
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

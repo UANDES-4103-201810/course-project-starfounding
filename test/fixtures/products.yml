@@ -1,23 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  category: one
   user: one
+  category: one
   title: MyString
   description: MyString
-  goal: 9.99
-  finishDate: 2018-04-13
+  goal: MyString
+  decimal: MyString
+  finishDate: 2018-05-05
   mainVideo: MyString
   mainImage: MyString
   rating: 1
 
 two:
-  category: two
   user: two
+  category: two
   title: MyString
   description: MyString
-  goal: 9.99
-  finishDate: 2018-04-13
+  goal: MyString
+  decimal: MyString
+  finishDate: 2018-05-05
   mainVideo: MyString
   mainImage: MyString
   rating: 1

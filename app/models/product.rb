@@ -31,5 +31,4 @@ class Product < ApplicationRecord
       errors.add(:finishDate, "Can't be in the past")
     end
   end
-
 end

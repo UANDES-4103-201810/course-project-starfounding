@@ -11,47 +11,52 @@
     </div>
   <% end %>
 
-  <div style="font-size: 20px" class="field">
-    <%= form.label :category_id%>
-    <%= form.text_field :category_id, id: :product_category_id %>
-  </div>
-
-  <div style="font-size: 20px" class="field">
+  <div class="field">
     <%= form.label :user_id %>
     <%= form.text_field :user_id, id: :product_user_id %>
   </div>
 
-  <div style="font-size: 20px" class="field">
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.text_field :category_id, id: :product_category_id %>
+  </div>
+
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title, id: :product_title %>
   </div>
 
-  <div style="font-size: 20px" class="field">
+  <div class="field">
     <%= form.label :description %>
     <%= form.text_field :description, id: :product_description %>
   </div>
 
-  <div style="font-size: 20px" class="field">
+  <div class="field">
     <%= form.label :goal %>
     <%= form.text_field :goal, id: :product_goal %>
   </div>
 
-  <div style="font-size: 20px" class="field">
+  <div class="field">
+    <%= form.label :decimal %>
+    <%= form.text_field :decimal, id: :product_decimal %>
+  </div>
+
+  <div class="field">
     <%= form.label :finishDate %>
     <%= form.date_select :finishDate, id: :product_finishDate %>
   </div>
 
-  <div style="font-size: 20px" class="field">
+  <div class="field">
     <%= form.label :mainVideo %>
     <%= form.text_field :mainVideo, id: :product_mainVideo %>
   </div>
 
-  <div style="font-size: 20px" class="field">
+  <div class="field">
     <%= form.label :mainImage %>
     <%= form.text_field :mainImage, id: :product_mainImage %>
   </div>
 
-  <div style="font-size: 20px" class="field">
+  <div class="field">
     <%= form.label :rating %>
     <%= form.number_field :rating, id: :product_rating %>
   </div>
