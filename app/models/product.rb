@@ -7,8 +7,8 @@ class Product < ApplicationRecord
   has_many :wish_list
   has_many :fund
 
-  validates :category, presence: true
-  validates :user, presence: true
+  validates :category_id, presence: true
+  validates :user_id, presence: true
   validates :title,
             numericality: false,
             presence: true
