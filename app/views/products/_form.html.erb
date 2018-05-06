@@ -1,6 +1,6 @@
 <%= form_with(model: product, local: true) do |form| %>
   <% if product.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" style="color: white">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
       <ul>
@@ -54,11 +54,6 @@
   <div class="field">
     <%= form.label :mainImage %>
     <%= form.text_field :mainImage, id: :product_mainImage %>
-  </div>
-
-  <div class="field">
-    <%= form.label :rating %>
-    <%= form.number_field :rating, id: :product_rating %>
   </div>
 
   <div class="actions">

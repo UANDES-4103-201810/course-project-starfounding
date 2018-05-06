@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Wish Lists</h1>
+<h1 style="color: white">Wish List</h1>
 
-<table>
+<table style="color: white">
   <thead>
     <tr>
       <th>Product</th>
@@ -12,6 +12,14 @@
   </thead>
 
   <tbody>
+  <div style="color: white">
+    <%= image_tag "project.jpg", :alt => "project", :size => "98x120" %>
+    <label>User</label>
+    <label>Category</label>
+    <label>Title</label>
+    <label>Description</label>
+    <li><%= link_to "Go", method: :get %></li>
+  </div>
     <% @wish_lists.each do |wish_list| %>
       <tr>
         <td><%= wish_list.product %></td>

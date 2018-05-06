@@ -19,6 +19,29 @@
   </thead>
 
   <tbody>
+
+    <div style="color: white">
+      <%= image_tag "project.jpg", :alt => "project", :size => "98x120" %>
+      <label>User</label>
+      <label>Category</label>
+      <label>Title</label>
+      <label>Description</label>
+      <li><%= link_to "Go", method: :get %></li>
+    </div>
+    <div style="color: white">
+      <%= image_tag "project.jpg", :alt => "project", :size => "98x120" %>
+      <label>User</label>
+      <label>Category</label>
+      <label>Title</label>
+      <label>Description</label>
+    </div>
+    <div style="color: white">
+      <%= image_tag "project.jpg", :alt => "project", :size => "98x120" %>
+      <label>User</label>
+      <label>Category</label>
+      <label>Title</label>
+      <label>Description</label>
+    </div>
     <% @products.each do |product| %>
       <tr>
         <td><%= product.user %></td>
