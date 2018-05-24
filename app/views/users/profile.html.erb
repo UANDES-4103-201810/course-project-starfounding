@@ -1,0 +1,38 @@
+<div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+  <div class="panel-heading">
+    <h1 align="center"><%= current_user.full_name %>'s Profile</h1>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-2">
+      <%= image_tag "default.jpg", :alt => "default", :size => "98x120" %>
+      </div>
+      <div class="col-md-4">
+        <p style="font-size:20px">Email: <%=current_user.email%><p>
+        <p style="font-size:15px">Projects Funded: </p>
+        <p style="font-size:15px">Projects in your wishlist: </p>
+        <p style="font-size:15px">Projects created by you: </p>
+      </div>
+      <div class="col-md-3" >
+        <p style="font-size: 20px; font-style: italic">
+          <%= link_to "Your funded projects", projects_path, method: :get %>
+        </p>
+        <p style="font-size: 20px; font-style: italic">
+          <%= link_to "Your wishlist", projects_path, method: :get %>
+        </p>
+        <p style="font-size: 20px; font-style: italic">
+          <%= link_to "Your projects", projects_path, method: :get %>
+        </p>
+      </div>
+      <div class="col-md-3">
+        <p style="font-size: 20px; font-style: italic">
+          <%= link_to "Edit Profile", edit_user_registration_path, method: :get %>
+        </p>
+        <p style="font-size: 20px; font-style: italic">
+          <%= link_to "Add payment method", edit_user_registration_path, method: :get %>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>

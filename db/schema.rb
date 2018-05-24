@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180505224937) do
+ActiveRecord::Schema.define(version: 2018_05_24_221857) do
 
   create_table "bank_data", force: :cascade do |t|
     t.integer "user_id"
@@ -27,50 +27,58 @@ ActiveRecord::Schema.define(version: 20180505224937) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "fund_promises", force: :cascade do |t|
-    t.integer "fund_id"
+  create_table "fund_promise_belongs", force: :cascade do |t|
     t.integer "promise_id"
+    t.integer "user_project_fund_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["fund_id"], name: "index_fund_promises_on_fund_id"
-    t.index ["promise_id"], name: "index_fund_promises_on_promise_id"
+    t.index ["promise_id"], name: "index_fund_promise_belongs_on_promise_id"
+    t.index ["user_project_fund_id"], name: "index_fund_promise_belongs_on_user_project_fund_id"
   end
 
-  create_table "funds", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "user_id"
-    t.decimal "amountFunded"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_funds_on_product_id"
-    t.index ["user_id"], name: "index_funds_on_user_id"
-  end
-
-  create_table "products", force: :cascade do |t|
-    t.integer "user_id"
+  create_table "projects", force: :cascade do |t|
     t.integer "category_id"
+    t.integer "user_id"
     t.string "title"
     t.string "description"
-    t.string "goal"
-    t.string "decimal"
-    t.date "finishDate"
+    t.float "goal"
+    t.datetime "finishDate"
     t.string "mainVideo"
     t.string "mainImage"
-    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["user_id"], name: "index_products_on_user_id"
+    t.float "rating"
+    t.index ["category_id"], name: "index_projects_on_category_id"
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "promises", force: :cascade do |t|
-    t.integer "product_id"
+    t.integer "project_id"
     t.string "description"
     t.date "deliveryDate"
-    t.decimal "price"
+    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_promises_on_product_id"
+    t.index ["project_id"], name: "index_promises_on_project_id"
+  end
+
+  create_table "user_project_funds", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "project_id"
+    t.float "amountFunded"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_user_project_funds_on_project_id"
+    t.index ["user_id"], name: "index_user_project_funds_on_user_id"
+  end
+
+  create_table "user_project_wishlists", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_user_project_wishlists_on_project_id"
+    t.index ["user_id"], name: "index_user_project_wishlists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -84,22 +92,13 @@ ActiveRecord::Schema.define(version: 20180505224937) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "isAdmin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "lastName"
-    t.boolean "isAdmin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "wish_lists", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_wish_lists_on_product_id"
-    t.index ["user_id"], name: "index_wish_lists_on_user_id"
   end
 
 end

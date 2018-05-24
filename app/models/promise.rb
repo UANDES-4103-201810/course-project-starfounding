@@ -1,9 +1,9 @@
 class Promise < ApplicationRecord
-  belongs_to :product, required: true
-  has_one :product
-  has_many :fund_promise
+  belongs_to :project, required: true
+  has_one :project
+  has_many :fund_promise_belong
 
-  validates :product, presence: true
+  validates :project, presence: true
   validates :description,
             presence: true
   validates :price,

@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  product: 
+  project: one
   description: MyString
-  deliveryDate: 2018-05-05
-  price: 9.99
+  deliveryDate: 2018-05-24
+  price: 1.5
 
 two:
-  product: 
+  project: two
   description: MyString
-  deliveryDate: 2018-05-05
-  price: 9.99
+  deliveryDate: 2018-05-24
+  price: 1.5

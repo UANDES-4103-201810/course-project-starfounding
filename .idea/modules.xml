@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/course-project-starfounding.iml" filepath="$PROJECT_DIR$/.idea/course-project-starfounding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/StarFounding.iml" filepath="$PROJECT_DIR$/.idea/StarFounding.iml" />
     </modules>
   </component>
 </project>
