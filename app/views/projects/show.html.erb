@@ -1,43 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p style="color:white">
   <strong>Category:</strong>
   <%= @project.category_id %>
 </p>
 
-<p>
+<p style="color:white">
   <strong>User:</strong>
   <%= @project.user_id %>
 </p>
 
-<p>
+<p style="color:white">
   <strong>Title:</strong>
   <%= @project.title %>
 </p>
-
-<p>
+<%= image_tag @project.image.url%>
+<p style="color:white">
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
 
-<p>
+<p style="color:white">
   <strong>Goal:</strong>
   <%= @project.goal %>
 </p>
 
-<p>
+<p style="color:white">
   <strong>Finishdate:</strong>
   <%= @project.finishDate %>
-</p>
-
-<p>
-  <strong>Mainvideo:</strong>
-  <%= @project.mainVideo %>
-</p>
-
-<p>
-  <strong>Mainimage:</strong>
-  <%= @project.mainImage %>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
