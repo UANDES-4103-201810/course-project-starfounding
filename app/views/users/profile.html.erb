@@ -5,7 +5,7 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-2">
-      <%= image_tag "default.jpg", :alt => "default", :size => "98x120" %>
+        <%= image_tag current_user.avatar.url %>
       </div>
       <div class="col-md-4">
         <p style="font-size:20px">Email: <%=current_user.email%><p>
