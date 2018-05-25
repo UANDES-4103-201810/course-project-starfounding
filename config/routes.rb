@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'users/profile'
 
   resources :projects
+
   devise_for :users
 
   root 'home#index'

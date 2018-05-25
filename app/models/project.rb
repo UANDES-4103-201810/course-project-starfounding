@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
-  belongs_to :category, required: true
-  belongs_to :user, required: true
+  belongs_to :category, optional: true
+  belongs_to :user, optional: true
   has_one :user
   has_many :promise
   has_one :category
@@ -16,10 +16,6 @@ class Project < ApplicationRecord
             presence: true
   validates :goal,
             numericality: true,
-            presence: true
-  validates :mainImage,
-            presence: true
-  validates :mainVideo,
             presence: true
   validates :rating,
             presence:true,
