@@ -1,33 +1,35 @@
-
-<p style="color:white">
-  <strong>Category:</strong>
-  <%= @project.category_id %>
-</p>
-
-<p style="color:white">
-  <strong>User:</strong>
-  <%= @project.user_id %>
-</p>
-
-<p style="color:white">
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
-<%= image_tag @project.image.url%>
-<p style="color:white">
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<p style="color:white">
-  <strong>Goal:</strong>
-  <%= @project.goal %>
-</p>
-
-<p style="color:white">
-  <strong>Finishdate:</strong>
-  <%= @project.finishDate %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<p id="notice"><%= notice %></p>
+<div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+  <div class="panel-heading">
+    <h1 align="center"> <%= @project.title%> </h1>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <% if @project.image_file_name != nil %>
+          <%=image_tag @project.image.url, :alt => "default", :size => "350x350" %>
+        <% else %>
+          <%= image_tag "project.jpg", :alt => "default", :size => "350x350" %>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <p>
+          <strong>Description:</strong>
+          <%= @project.description %>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <p>Category: <%= @project.category_id %></p>
+        <p>User: <%= @project.user_id %> </p>
+        <p>Goal: <%= @project.goal %></p>
+        <p>Finishes on <%= @project.finishDate.strftime("%Y-%m-%d") %> at <%= @project.finishDate.strftime("%I:%M %P") %> </p>
+        <% if current_user.present? %>
+          <% if current_user.isAdmin? or current_user.id == @project.user_id %>
+            <%= link_to 'Edit this project', edit_project_path(@project) %>
+            <%= link_to 'Cancel this project', @user, method: :delete, data: {confirm: 'This project is about to be deleted'} %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
   def admin
     @users = User.all
+    @categories = Category.all
   end
   def show
     @user = User.find(params[:id])
