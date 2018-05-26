@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 <div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
   <div class="panel-heading">
@@ -24,6 +25,7 @@
         <p>Goal: <%= @project.goal %></p>
         <p>Finishes on <%= @project.finishDate.strftime("%Y-%m-%d") %> at <%= @project.finishDate.strftime("%I:%M %P") %> </p>
         <% if current_user.present? %>
+          <%= link_to 'Fund', new_fund_path%>
           <% if current_user.isAdmin? or current_user.id == @project.user_id %>
             <%= link_to 'Edit this project', edit_project_path(@project) %>
             <%= link_to 'Cancel this project', @user, method: :delete, data: {confirm: 'This project is about to be deleted'} %>
@@ -33,3 +35,4 @@
     </div>
   </div>
 </div>
+
