@@ -8,7 +8,8 @@ class FundsController < ApplicationController
 
     respond_to do |format|
       if @fund.save
-        format.html { redirect_to @project, notice: 'Project was successfully funded.' }
+        format.html { redirect_to @fund, notice: 'Project was successfully funded.' }
+        format.json { render :show, status: :created, location: @project }
       end
     end
   end
