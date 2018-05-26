@@ -1,6 +1,11 @@
-<h1>Editing Project</h1>
+<div class="panel panel-default devise-bs">
+  <div class="panel-heading">
+    <h1>Editing Project</h1>
+  </div>
+  <div class="panel-body">
+  <%= render 'form', project: @project %>
 
-<%= render 'form', project: @project %>
-
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+  <%= link_to 'Show', @project %> |
+  <%= link_to 'Back', projects_path %>
+  </div>
+</div>

@@ -6,36 +6,64 @@
 </div>
 
 <% else %>
-<div class="col-md-5">
-  <p id="notice"><%= notice %></p>
-  <div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
-    <div class="panel-heading">
-      <h1 align="center"> Users</h1>
-    </div>
-    <div class="panel-body">
-      <table class="table" >
-        <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Full name</th>
-          <th scope="col"> Email </th>
-          <th scope="col">Is admin?</th>
-          <th scope="col">Show profile</th>
-        </tr>
-        </thead>
-        <tbody>
-          <% @users.each do |user| %>
+  <div>
+    <div class="col-md-5">
+      <p id="notice"><%= notice %></p>
+      <div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+        <div class="panel-heading">
+          <h1 align="center"> Users</h1>
+        </div>
+        <div class="panel-body">
+          <table class="table" >
+            <thead>
             <tr>
-              <th scope="row"><%=user.id%></th>
-              <td><%= user.full_name%></td>
-              <td><%= user.email %></td>
-              <td><% if user.isAdmin? %> Yes <% else %> No <% end %> </td>
-              <td><%= link_to "Visit", user_path(user.id), method: :get%></td>
+              <th scope="col">#</th>
+              <th scope="col">Full name</th>
+              <th scope="col"> Email </th>
+              <th scope="col">Is admin?</th>
+              <th scope="col">Show profile</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+            </thead>
+            <tbody>
+              <% @users.each do |user| %>
+                <tr>
+                  <th scope="row"><%=user.id%></th>
+                  <td><%= user.full_name%></td>
+                  <td><%= user.email %></td>
+                  <td><% if user.isAdmin? %> Yes <% else %> No <% end %> </td>
+                  <td><%= link_to "Visit", user_path(user.id), method: :get%></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+        <div class="panel-heading">
+          <h1 align="center"> Categories </h1>
+        </div>
+        <div class="panel-body">
+          <table class="table" >
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @categories.each do |category| %>
+              <tr>
+                <th scope="row"><%=category.id%></th>
+                <td><%= category.name %></td>
+                <td><%= user.email %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 <% end %>
