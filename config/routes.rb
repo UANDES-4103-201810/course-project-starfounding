@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'users/admin'
 
   resources :projects
+  resources :funds
 
   devise_for :users
 

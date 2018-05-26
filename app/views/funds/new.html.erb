@@ -1,0 +1,22 @@
+<hr>
+<%= form_with(model: @fund, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.collection_select(:project_id, Project.all,
+                               :id, :title, {:prompt => 'Select a Project',
+                                            :selected =>@funds.project}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, class: 'form-control' %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+
+
+  <%= form.hidden_field :user_id, :value => current_user %>
+
+
+<% end %>

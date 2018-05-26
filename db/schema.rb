@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_25_042901) do
+ActiveRecord::Schema.define(version: 2018_05_26_013355) do
 
   create_table "bank_data", force: :cascade do |t|
     t.integer "user_id"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 2018_05_25_042901) do
     t.datetime "updated_at", null: false
     t.index ["promise_id"], name: "index_fund_promise_belongs_on_promise_id"
     t.index ["user_project_fund_id"], name: "index_fund_promise_belongs_on_user_project_fund_id"
+  end
+
+  create_table "funds", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "user_id"
+    t.float "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_funds_on_project_id"
+    t.index ["user_id"], name: "index_funds_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
