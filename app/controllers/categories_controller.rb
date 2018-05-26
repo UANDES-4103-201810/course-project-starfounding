@@ -1,8 +1,10 @@
 class CategoriesController < ApplicationController
   def show
+
+  end
+  def index
     @categories = Category.all
   end
-
   def new
     @category = Category.new
   end
@@ -12,7 +14,7 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       if @category.save
         format.html { redirect_to @category, notice: 'Cateogry was successfully created.' }
-        format.json { render :show, status: :created, location: @category }
+        format.json { render :index, status: :created, location: @category }
       else
         format.html { render :new }
         format.json { render json: @category.errors, status: :unprocessable_entity }

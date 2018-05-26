@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+  <div class="panel-heading">
+    <h1 align="center"> Categories</h1>
+  </div>
+</div>
+
+
+<% @categories.each do |category| %>
+  <div class="col-md-3">
+    <div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+      <div class="panel-heading">
+        <h3><%= category.name %></h3>
+      </div>
+
+    </div>
+  </div>
+<% end %>
