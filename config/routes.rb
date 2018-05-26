@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :projects
   resources :funds
+  resources :categories
 
   devise_for :users
 
