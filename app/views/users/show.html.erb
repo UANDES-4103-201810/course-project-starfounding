@@ -1,43 +1,37 @@
 <div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
   <div class="panel-heading">
-    <h1 align="center"><%= current_user.full_name %>'s Profile</h1>
+    <h1 align="center"><%= @user.full_name %>'s Profile</h1>
   </div>
   <div class="panel-body">
     <div class="row">
       <div class="col-md-2">
-        <% if current_user.avatar_file_name != nil %>
-          <%= image_tag current_user.avatar.url %>
+        <% if @user.avatar_file_name != nil %>
+          <%= image_tag @user.avatar.url %>
         <% else %>
           <%= image_tag "default.jpg", :alt => "default", :size => "98x120" %>
         <% end %>
 
       </div>
       <div class="col-md-4">
-        <p style="font-size:20px">Email: <%=current_user.email%><p>
+        <p style="font-size:20px">Email: <%=@user.email%><p>
         <p style="font-size:15px">Projects Funded: </p>
-        <p style="font-size:15px">Projects in your wishlist: </p>
-        <p style="font-size:15px">Projects created by you: </p>
+        <p style="font-size:15px">Projects in wishlist: </p>
+        <p style="font-size:15px">Projects created by this user: </p>
       </div>
       <div class="col-md-3" >
         <p style="font-size: 20px; font-style: italic">
-          <%= link_to "Your funded projects", projects_path, method: :get %>
+          <%= link_to "Projects Funded", projects_path, method: :get %>
         </p>
         <p style="font-size: 20px; font-style: italic">
-          <%= link_to "Your wishlist", projects_path, method: :get %>
+          <%= link_to "Wishlist", projects_path, method: :get %>
         </p>
         <p style="font-size: 20px; font-style: italic">
-          <%= link_to "Your projects", projects_path, method: :get %>
+          <%= link_to "This users' Projects", projects_path, method: :get %>
         </p>
       </div>
       <div class="col-md-3">
         <p style="font-size: 20px; font-style: italic">
           <%= link_to "Edit Profile", edit_user_registration_path, method: :get %>
-        </p>
-        <p style="font-size: 20px; font-style: italic">
-          <%= link_to "Add payment method", edit_user_registration_path, method: :get %>
-        </p>
-        <p style="font-size: 20px; font-style: italic">
-          <%= link_to "Create a new project", new_project_path, method: :get %>
         </p>
       </div>
     </div>
