@@ -57,11 +57,13 @@
               <tr>
                 <th scope="row"><%=category.id%></th>
                 <td><%= category.name %></td>
-                <td><%= user.email %></td>
               </tr>
             <% end %>
             </tbody>
           </table>
+          <div>
+            <%= link_to "Create new category", new_category_path, method: :get %>
+          </div>
         </div>
       </div>
     </div>
