@@ -31,7 +31,16 @@
       </div>
       <div class="col-md-3">
         <p style="font-size: 20px; font-style: italic">
-          <%= link_to "Edit Profile", edit_user_registration_path, method: :get %>
+          <% if current_user.isAdmin? %>
+            <%= link_to "Cancel this account", @user, method: :delete, data: {confirm: 'This account is about to be deleted'} %>
+            <%= form_for @user do |f|%>
+              <div>
+                <%= f.label :isAdmin, "Administrator" %>
+                <%= f.check_box :isAdmin %>
+              </div>
+              <%= f.submit t('.update', default: 'Update privileges'), class: 'btn btn-primary' %>
+            <% end %>
+          <% end %>
         </p>
       </div>
     </div>
