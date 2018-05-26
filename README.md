@@ -15,6 +15,7 @@ About what we could not implement:
 * Projects that one user funded.
 * At the time, the three links in the user profile go to all products. 
 * Correct implementation of outstanding projects.
+* Correct implementation of funds. the view for the creation is created, but the funds cannot be created.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
