@@ -32,6 +32,10 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem "paperclip", "~> 6.0.0"
 
+gem 'therubyracer'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

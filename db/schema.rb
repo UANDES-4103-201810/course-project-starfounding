@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_26_013355) do
+ActiveRecord::Schema.define(version: 2018_06_12_211926) do
 
   create_table "bank_data", force: :cascade do |t|
     t.integer "user_id"
@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 2018_05_26_013355) do
   end
 
   create_table "fund_promise_belongs", force: :cascade do |t|
-    t.integer "promise_id"
+    t.integer "promises_id"
     t.integer "user_project_fund_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["promise_id"], name: "index_fund_promise_belongs_on_promise_id"
+    t.index ["promises_id"], name: "index_fund_promise_belongs_on_promises_id"
     t.index ["user_project_fund_id"], name: "index_fund_promise_belongs_on_user_project_fund_id"
   end
 
@@ -115,6 +115,8 @@ ActiveRecord::Schema.define(version: 2018_05_26_013355) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
