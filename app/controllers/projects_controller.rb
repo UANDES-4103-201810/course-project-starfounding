@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @promise = Promise.all
   end
 
   # GET /projects/new
@@ -19,6 +20,11 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+  end
+
+  # GET /projects
+  def user_projects
+    @projects = Project.all
   end
 
   # POST /projects

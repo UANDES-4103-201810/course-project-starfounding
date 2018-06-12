@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+  <div class="panel-body">
+    <div class="row">
+
+      <div class="col-md-4">
+        <p>
+          <strong>Description:</strong>
+          <%= @promise.description %>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <p>Category: <%= @project.category_id %></p>
+        <p>User: <%= @project.user_id %> </p>
+        <p>Goal: <%= @project.goal %></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+

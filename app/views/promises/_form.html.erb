@@ -1,0 +1,27 @@
+<%= form_for @promise do |form| %>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: 'form-control' %>
+  </div>
+
+
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deliveryDate %>
+    <%= form.datetime_select :deliveryDate, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.submit %>
+  </div>
+
+
+  <%= form.hidden_field :project, :value => @project.id %>
+
+<% end %>

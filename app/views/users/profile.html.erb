@@ -14,9 +14,7 @@
       </div>
       <div class="col-md-4">
         <p style="font-size:20px">Email: <%=current_user.email%><p>
-        <p style="font-size:15px">Projects Funded: </p>
-        <p style="font-size:15px">Projects in your wishlist: </p>
-        <p style="font-size:15px">Projects created by you: </p>
+        
       </div>
       <div class="col-md-3" >
         <p style="font-size: 20px; font-style: italic">
@@ -26,11 +24,9 @@
           <%= link_to "Your wishlist", projects_path, method: :get %>
         </p>
         <p style="font-size: 20px; font-style: italic">
-          <%= link_to "Your projects", projects_path, method: :get %>
+          <%= link_to "Your projects", 'project/myprojects', method: :get %>
         </p>
-        <p style="font-size: 10px; font-style: italic">
-          <%= link_to "new project", new_project_path%>
-        </p>
+
       </div>
       <div class="col-md-3">
         <p style="font-size: 20px; font-style: italic">
