@@ -61,6 +61,12 @@
         <% end %>
 
       </ul>
+      <p align="right">
+      <%= form_tag(projects_path, method: :get) do %>
+        <%= text_field_tag :term, params[:term] %>
+        <%= submit_tag 'Search', name:nil %>
+      <% end %>
+      </p>
     </div>
   </div>
 </div>

@@ -2,6 +2,9 @@
 <div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
   <div class="panel-heading">
     <h1 align="center"> Categories</h1>
+    <p align="right">
+      <%= link_to 'New Category', new_category_path , method: :get if current_user.present? and current_user.isAdmin?%>
+    </p>
   </div>
 </div>
 
@@ -17,4 +20,4 @@
   </div>
 <% end %>
 
-<%= link_to 'New Category', new_category_path , method: :get if current_user.present? and current_user.isAdmin?%>
+

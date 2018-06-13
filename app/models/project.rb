@@ -20,9 +20,10 @@ class Project < ApplicationRecord
   validates :goal,
             numericality: true,
             presence: true
-  validates :rating,
+  validates :is_outstanding,
             presence:true,
-            allow_blank: true
+            allow_blank: true,
+            default: false
   validate :product_creation_is_not_in_the_past
 
   def product_creation_is_not_in_the_past

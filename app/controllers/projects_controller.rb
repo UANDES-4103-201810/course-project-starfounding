@@ -4,7 +4,11 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = if params[:term]
+                  Project.where('title LIKE ?', "%#{params[:term]}%")
+                else
+                  Project.all
+                end
   end
 
   # GET /projects/1
@@ -77,6 +81,7 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:category_id, :user_id, :title,
                                       :description, :goal, :finishDate,
-                                      :mainVideo, :mainImage, :image)
+                                      :mainVideo, :mainImage, :image,
+                                      :is_outstanding, :term)
     end
 end
