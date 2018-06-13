@@ -17,4 +17,4 @@
   </div>
 <% end %>
 
-<%= link_to 'New Category', new_category_path , method: :get if current_user.isAdmin?%>
+<%= link_to 'New Category', new_category_path , method: :get if current_user.present? and current_user.isAdmin?%>
