@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = if params[:term]
-                  Project.where('title LIKE ?', "%#{params[:term]}%")
+                  Project.where('title LIKE ? OR description LIKE ?', "%#{params[:term]}%", "%#{params[:term]}%")
                 else
                   Project.all
                 end
