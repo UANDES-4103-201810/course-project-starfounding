@@ -1,3 +1,11 @@
+<% if current_user.id != @project.user_id %>
+
+  <div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+    <div class="panel-heading">
+      <h1 align="center"> YOU DO NOT HAVE PERMISSION TO VISIT THIS SITE</h1>
+    </div>
+  </div>
+<%else%>
 <div class="panel panel-default devise-bs">
   <div class="panel-heading">
     <h1>Editing Project</h1>
@@ -9,3 +17,5 @@
   <%= link_to 'Back', projects_path %>
   </div>
 </div>
+
+<%end%>
