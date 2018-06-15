@@ -31,6 +31,7 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem "paperclip", "~> 6.0.0"
+gem 'jquery-rails'
 
 gem 'therubyracer'
 gem 'omniauth'

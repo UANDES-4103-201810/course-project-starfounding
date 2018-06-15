@@ -6,9 +6,8 @@ class PromisesController < ApplicationController
     @promises = Promise.all
   end
   def new
-    @project= Project.find(params[:project_id])
     @promise = Promise.new
-
+    @project = Project.find(params[:project_id])
   end
 
   def create

@@ -9,10 +9,6 @@ class FundsController < ApplicationController
   def new
     @fund = Fund.new
     @project= Project.find(params[:project_id])
-
-
-
-
   end
 
   def create
