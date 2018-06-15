@@ -13,7 +13,7 @@
     <%= form.submit class: 'btn btn-primary' %>
   </div>
 
-  <%= form.hidden_field :user_id, :value => current_user.id %>
-  <%= form.hidden_field :project_id, :value => @project.id%>
+  <%= form.hidden_field :user, :value => current_user.id %>
+  <%= form.hidden_field :project, :value => @project.id%>
 
 <% end %>

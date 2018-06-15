@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+  <div class="panel-heading">
+    <h1 align="center"> Your Wishlist</h1>
+  </div>
+</div>
+
+
+<% @user_project_wishlist.each  do |wish| %>
+  <% if current_user.id == wish.user_id%>
+    <div class="col-md-3">
+      <div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+        <div class="panel-heading">
+          <h3><%= wish.project.title %></h3>
+          <a href="<%= project_url(wish.project_id)%>">go to project</a>
+        </div>
+        
+      </div>
+    </div>
+  <%end%>
+<% end %>

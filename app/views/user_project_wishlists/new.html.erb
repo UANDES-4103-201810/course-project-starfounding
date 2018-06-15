@@ -1,0 +1,13 @@
+
+<%= form_with(model: @project_user_project_wishlist, local: true) do |form| %>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
+  <%= form.hidden_field :project_id, :value => @project.id %>
+
+<div class="field">
+  <h1 style="color:white">Project added to your wishlist</h1>
+  <%= form.submit class: 'btn btn-primary' %>
+</div>
+
+
+
+<%end%>

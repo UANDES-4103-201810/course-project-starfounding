@@ -10,13 +10,13 @@ Rails.application.routes.draw do
   resources :projects do
     resources :funds
     resources :promises
+    resources :user_project_wishlists
   end
 
   resources :categories
-  resources :user_project_wishlists
 
 
-  post 'projects/:id' => 'user_project_wishlists#create'
+  post 'projects/:id/user_project_wishlists/new' => 'user_project_wishlists#create'
   post 'projects/:id/funds/new' => 'funds#create', as: :fund
   post 'projects/:id/promises/new' => 'promises#create', as: :promise
   get 'users/:id' => 'users#show', as: :user

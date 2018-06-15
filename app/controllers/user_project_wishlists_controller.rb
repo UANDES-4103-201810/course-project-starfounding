@@ -1,18 +1,20 @@
 class UserProjectWishlistsController < ApplicationController
   def show
-
+    @user_project_wishlists = UserProjectWishlist.all
   end
 
   def index
-    @user_project_wishlists = UserProjectWishlist.all
+
   end
 
   def new
     @user_project_wishlist = UserProjectWishlist.new
+    @project= Project.find(params[:project_id])
   end
 
   def create
     @user_project_wishlist=UserProjectWishlist.new(wishlist_params)
+    @index= users_profile_path
     respond_to do |format|
       if @user_project_wishlist.save
         format.html { redirect_to @index, notice: 'Promise was successfully earned.' }
@@ -26,6 +28,6 @@ class UserProjectWishlistsController < ApplicationController
   end
 
   def wishlist_params
-    params.permit(:project_id, :user_id)
+    params.permit(:project, :user)
   end
 end

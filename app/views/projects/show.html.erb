@@ -26,8 +26,8 @@
         <p>Finishes on <%= @project.finishDate.strftime("%Y-%m-%d") %> at <%= @project.finishDate.strftime("%I:%M %P") %> </p>
         <% if current_user.present? %>
           <% if current_user.id!=@project.user_id%>
-            <%= link_to 'Fund', new_project_fund_path(@project)%>
-            <%= button_to 'Add to wishlist' %>
+            <%= link_to 'Fund', new_project_fund_path(@project.id)%>
+            <%= link_to 'Add to wishlist', new_project_user_project_wishlist_path(@project) %>
 
           <%end%>
           <% if current_user.isAdmin? or current_user.id == @project.user_id %>
