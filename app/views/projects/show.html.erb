@@ -21,17 +21,18 @@
       </div>
       <div class="col-md-4">
         <p>Category: <%= @project.category_id %></p>
-        <p>User: <%= @project.user_id %> </p>
+        <p>User: <%= @project.user_id %></p>
         <p>Goal: <%= @project.goal %></p>
         <p>Finishes on <%= @project.finishDate.strftime("%Y-%m-%d") %> at <%= @project.finishDate.strftime("%I:%M %P") %> </p>
-        <p>add to wishlist</p>
         <% if current_user.present? %>
           <% if current_user.id!=@project.user_id%>
-            <%= link_to 'Fund', new_fund_path(@project)%>
+            <%= link_to 'Fund', new_project_fund_path(@project)%>
+            <%= button_to 'Add to wishlist' %>
+
           <%end%>
           <% if current_user.isAdmin? or current_user.id == @project.user_id %>
-            <%= link_to 'add a promises', new_project_promise_path(@project)%>
-            <%= link_to 'Edit this project', edit_project_path(@project) %>
+            <%= link_to 'Add Promise', new_project_promise_path(@project)%>
+            <%= link_to 'Edit this project', edit_project_path(@project.id) %>
             <%= link_to 'Cancel this project', @user, method: :delete, data: {confirm: 'This project is about to be deleted'} %>
           <% end %>
           <% if current_user.isAdmin? %>
@@ -54,4 +55,3 @@
     </div>
   </div>
 </div>
-

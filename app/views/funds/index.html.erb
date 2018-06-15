@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+  <div class="panel-heading">
+    <h1 align="center"> Your Funded Projects</h1>
+  </div>
+</div>
+
+
+<% @funds.each  do |fund| %>
+  <% if current_user.id == fund.user_id%>
+    <div class="col-md-3">
+      <div class="panel panel-default devise-bs" xmlns:font-size="http://www.w3.org/1999/xhtml">
+        <div class="panel-heading">
+          <h3><%= fund.project.title %></h3>
+          <a href="<%= project_url(fund.project_id)%>">go to project</a>
+        </div>
+        <div class="panel-body">
+          <p>Funded: <%= fund.amount %></p>
+          
+        </div>
+        <div class="panel-body">
+          <p>Funded date: <%=fund.created_at%></p>
+        </div>
+      </div>
+    </div>
+  <%end%>
+<% end %>

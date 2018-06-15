@@ -1,21 +1,20 @@
-class PromisesController < ApplicationController
+class UserProjectWishlistsController < ApplicationController
   def show
 
   end
-  def index
-    @promises = Promise.all
-  end
-  def new
-    @project= Project.find(params[:project_id])
-    @promise = Promise.new
 
+  def index
+    @user_project_wishlists = UserProjectWishlist.all
+  end
+
+  def new
+    @user_project_wishlist = UserProjectWishlist.new
   end
 
   def create
-    @promise = Promise.new(promise_params)
-    @index = users_profile_path
+    @user_project_wishlist=UserProjectWishlist.new(wishlist_params)
     respond_to do |format|
-      if @promise.save
+      if @user_project_wishlist.save
         format.html { redirect_to @index, notice: 'Promise was successfully earned.' }
         format.json { render :index, status: :created, location: @promise }
 
@@ -26,7 +25,7 @@ class PromisesController < ApplicationController
     end
   end
 
-  def promise_params
-    params.permit(:project_id, :description, :deliveryDate, :price)
+  def wishlist_params
+    params.permit(:project_id, :user_id)
   end
 end

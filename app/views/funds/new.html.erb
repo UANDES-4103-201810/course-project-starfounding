@@ -1,22 +1,8 @@
-<hr>
-<%= form_with(model: @fund, local: true) do |form| %>
-
-  <div class="field">
-    <%= form.collection_select(:project_id, Project.all,
-                               :id, :title, {:prompt => 'Select a Project',
-                                            :selected =>@funds.project}) %>
+<div class="panel panel-default devise-bs">
+  <div class="panel-heading">
+    <h1>New Fund</h1>
   </div>
-
-  <div style="color:white", class="field">
-    <%= form.label :amount %>
-    <%= form.text_field :amount, class: 'form-control' %>
+  <div class="panel-body">
+    <%= render 'form', fund: @fund %>
   </div>
-  <div>
-    <%= form.submit %>
-  </div>
-
-
-  <%= form.hidden_field :user_id, :value => current_user %>
-
-
-<% end %>
+</div>
